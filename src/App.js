@@ -54,8 +54,8 @@ function App() {
           <Route exact path="/codevanced/user_view/library" element={<Library />}/>
           <Route exact path="/codevanced/user_view/log_in" element={<Join />}/>                                                      
         </Route>
-      </Routes> 
-      <Route  path="*"  element={<Not_found />}/>      
+        <Route  path="*"  element={<Not_found />}/>  
+      </Routes>     
     </BrowserRouter>
   </QueryClientProvider>
    
