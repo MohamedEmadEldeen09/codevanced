@@ -2,16 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+
+//store
+import { Provider } from 'react-redux';
+import store from './commen/store';
+
+//css admin
+import './adminstration/css/questions_styles.css'
+import './adminstration/css/addQ_styles.css'
+import './adminstration/css/editQ_styles.css'
+import './adminstration/css/admin_login.css'
+import './adminstration/css/profile_admin.css'
+//
+
+//css user
+import './userInterface/css/design.css'
+import './userInterface/css/forQuize.css'
+import './userInterface/css/signupLogin.css'
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+     <App />
+    </Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

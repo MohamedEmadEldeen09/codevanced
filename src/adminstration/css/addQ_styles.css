@@ -1,0 +1,35 @@
+
+@media only screen and (max-width : 400px) {
+    .add-question article select{ 
+        margin-top: 5px;
+     }
+}
+.important-notes{
+    margin-bottom: 15px;
+    text-align: start;
+}
+.add-option{
+    text-align: right;
+    margin-bottom: 7px;
+}
+
+.add-question{
+    background-color: white;
+    box-shadow: 1px 1px 1px #eee;
+    padding: 10px;
+}
+.add-question article{ 
+   margin-bottom: 10px;
+}
+
+.text-htmlFor-newQ{
+    height: 30px ;
+    padding: 5px 10px;
+    border: none;
+    margin-left: 10px;
+    background-color: #eee;
+}
+.submit-add{
+    margin: 7px 0;
+    background-color: skyblue;
+}
