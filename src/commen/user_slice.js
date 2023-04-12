@@ -18,24 +18,19 @@ export const userSlice = createSlice({
          return option.value === action.payload[0]
       })
       state.answers = [...state.answers ,targetOption[0]]
-      //console.log( state.answers);
-      //console.log(state.indexQ); 
       if(state.indexQ == action.payload[1].length-1){
         state.indexQ =0
         state.testFinish = true    
-        let sumW = 0 , sumD= 0 , sumM =0 , sumS=0
+        let sumB = 0 , sumD= 0 , sumF =0 
         state.answers.forEach((answer)=>{
-          if(answer.key == "web") sumW +=1
-          if(answer.key == "desktop") sumD +=1
-          if(answer.key == "mobile") sumM +=1
-          if(answer.key == "security") sumS +=1
+          if(answer.key == "backend") sumB +=1
+          if(answer.key == "frontend") sumF +=1
+          if(answer.key == "data science") sumD +=1
         })
-        //console.log([sumW,sumD,sumM,sumS]);
-        let score = [sumW,sumD,sumM,sumS].sort().reverse()[0]
-        if(score == sumW) state.result = 'Web' + " Development"
-        if(score == sumD) state.result = 'Desktop' + " Development"
-        if(score == sumS) state.result = 'Security' + " Development"
-        if(score == sumM) state.result = 'Mobile' + " Development"
+        let score = [sumB,sumF,sumD].sort().reverse()[0]
+        if(score == sumB) state.result = 'BackEnd' + " Development"
+        if(score == sumF) state.result = 'FrontEnd' + " Development"
+        if(score == sumD) state.result = 'Data Science'
          
       }else{
         state.indexQ += 1

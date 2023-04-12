@@ -22,7 +22,7 @@ function Result() {
           <div className="logo">
           <Link to="/codevanced/user_view"><h2>
               <span className='forLogo-char'>&lt;</span> Codvanced 
-              <span className='forLogo-char'>/&gt;</span>
+              <span className='forLogo-char'> /&gt;</span>
               </h2></Link> 
           </div>
         </div>
@@ -37,16 +37,16 @@ function Result() {
                     <i className='bx bx-code-alt'></i></h1> 
                 <p>
                    <i className='bx bxs-quote-single-left' ></i>
-                   -- we recomend the web develoment track,
-                   you can choose the frontend side 
-                   or the backend side we think the Two
-                   sides fit you .               
+                   -- we recomend this track to you because it fits 
+                   your intentions and your goals and we think
+                   that you will have a good career if you start making 
+                   progress with this track.               
                </p>
             </div>
             <div className="resources">
               <h2> Resources to Learn</h2>
               <p>
-                here are some resources will help
+                here are some resources will help you
                 during the journay, you can search for 
                 any course you want related to the recomended 
                 track for you.

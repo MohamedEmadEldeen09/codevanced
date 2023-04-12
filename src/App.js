@@ -19,7 +19,7 @@ function App() {
   const queryClient = new QueryClient()
 
   return (
-    <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
         <Route path="/codevanced" element={<Footer />}>

@@ -55,23 +55,23 @@
 }
 .quiz-container button{
     max-width: 20%;  
-    margin-left: 10px;
+    /* margin-left: 10px; */
     margin-top: 15px;
     background-color: var(--primary)
+}
+.article:first-child{
+    margin-top: 10px;
 }
 .article label{ 
     font-family: 'Josefin Sans', sans-serif;
 }
 .question-title{
     font-family: 'Noto Serif', serif;
-    margin-bottom: 5px;
 }
 .counter-next{
-    margin-left: 20px;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Playfair Display', serif;
-
 }
 
 

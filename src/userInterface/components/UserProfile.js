@@ -63,7 +63,7 @@ const deletaAcount = ()=>{
           <div className="logo">
           <Link to="/codevanced/user_view"><h2>
               <span className='forLogo-char'>&lt;</span> Codvanced 
-              <span className='forLogo-char'>/&gt;</span>
+              <span className='forLogo-char'> /&gt;</span>
               </h2></Link> 
           </div>
         </div>

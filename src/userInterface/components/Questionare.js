@@ -6,7 +6,7 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 // import { questions_url } from '../../commen/admin_slice'
 
-const questions_url = "https://codvanced-database.onrender.com/questions"
+const questions_url = "https://codvanced-database.onrender.com/codvanced_Questions"
 function Questionare() {
 
    const questionsByQuery = useQuery("question_gA" , async()=>{     
@@ -55,13 +55,13 @@ function Questionare() {
                   <div className="logo">
                   <Link to="/codevanced/user_view"><h2>
                      <span className='forLogo-char'>&lt;</span> Codvanced 
-                     <span className='forLogo-char'>/&gt;</span>
+                     <span className='forLogo-char'> /&gt;</span>
                      </h2></Link> 
                   </div>
                </div>
             </header>
              <header className="quiz-header">
-            <h1>Hello mohamed emad <i className='bx bxs-user-pin' ></i></h1>           
+            <h1> {userName} <i className='bx bxs-user-pin' ></i></h1>           
             </header>
             <hr />      
             <section className="quiz-question">
@@ -80,13 +80,13 @@ function Questionare() {
                   <div className="logo">
                   <Link to="/codevanced/user_view"><h2>
                      <span className='forLogo-char'>&lt;</span> Codvanced 
-                     <span className='forLogo-char'>/&gt;</span>
+                     <span className='forLogo-char'> /&gt;</span>
                      </h2></Link> 
                   </div>
                </div>
             </header>
              <header className="quiz-header">
-            <h1>Hello mohamed emad <i className='bx bxs-user-pin' ></i></h1>           
+            <h1> {userName} <i className='bx bxs-user-pin' ></i></h1>           
             </header>
             <hr />      
             <section className="quiz-question">
@@ -111,7 +111,7 @@ function Questionare() {
           <div className="logo">
           <Link to="/codevanced/user_view"><h2>
               <span className='forLogo-char'>&lt;</span> Codvanced 
-              <span className='forLogo-char'>/&gt;</span>
+              <span className='forLogo-char'> /&gt;</span>
               </h2></Link> 
           </div>
         </div>
@@ -132,7 +132,7 @@ function Questionare() {
          { startTest && 
          <div className="quiz-container">
          { !testFinish ? 
-           <form>
+           <>
             <label className="question-title">{indexQ+1} - 
             {questionsByQuery.data[indexQ]?.title}</label> 
 
@@ -148,9 +148,9 @@ function Questionare() {
                })
             }
 
-            <button type="button" className="btn" onClick={handleNext}>Next</button>
+            <button type="button" className="btn" onClick={handleNext}>Next</button>                      
             <span className='counter-next'>{indexQ+1}/{questionsByQuery.data.length}</span>
-            </form> 
+            </> 
            : 
            <Link to="/codevanced/user_view/result">see the result</Link>
          }          
