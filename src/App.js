@@ -22,8 +22,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
-        <Route path="/codevanced/user_view" element={<Footer />}>
+        <Route path="/codevanced" element={<Footer />}>
           <Route exact index element={<Home />}/>
+          <Route exact path="/codevanced/user_view" element={<Home />}/>
           <Route exact path="/codevanced/user_view/join" element={<SignUp />}/>
           <Route exact path="/codevanced/user_view/test" element={<Questionare />}/>
           <Route exact path="/codevanced/user_view/result" element={<Result />}/>   
