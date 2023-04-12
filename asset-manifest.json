@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/codevanced/static/css/main.11e152c2.css",
-    "main.js": "/codevanced/static/js/main.cd0c1a69.js",
-    "static/media/mobT.png": "/codevanced/static/media/mobT.a945c110ec6368b5ca1f.png",
+    "main.css": "/codevanced/static/css/main.c17895c7.css",
+    "main.js": "/codevanced/static/js/main.6ff35eac.js",
+    "static/media/track1.png": "/codevanced/static/media/track1.e473f920580cd89f2f00.png",
     "static/media/review4.jpg": "/codevanced/static/media/review4.606389146e9e9930519b.jpg",
     "static/media/review7.jpg": "/codevanced/static/media/review7.f43ddf3129ddc9305bbd.jpg",
     "static/media/review1.jpg": "/codevanced/static/media/review1.546d439681fff278a402.jpg",
-    "static/media/desT2.png": "/codevanced/static/media/desT2.a33bfb09c652542c6fe5.png",
     "static/media/review2.jpg": "/codevanced/static/media/review2.69e082d64de15db93be8.jpg",
-    "static/media/review6.jpg": "/codevanced/static/media/review6.ee0a0dd6d8ce7907af7b.jpg",
     "static/media/webT.jpg": "/codevanced/static/media/webT.a96684e459e978ad5a76.jpg",
-    "static/media/desT.png": "/codevanced/static/media/desT.53e5c41d9a9eeb8779e6.png",
+    "static/media/appDownload.png": "/codevanced/static/media/appDownload.afff80703d0f0a975d1b.png",
     "index.html": "/codevanced/index.html",
-    "main.11e152c2.css.map": "/codevanced/static/css/main.11e152c2.css.map",
-    "main.cd0c1a69.js.map": "/codevanced/static/js/main.cd0c1a69.js.map"
+    "main.c17895c7.css.map": "/codevanced/static/css/main.c17895c7.css.map",
+    "main.6ff35eac.js.map": "/codevanced/static/js/main.6ff35eac.js.map"
   },
   "entrypoints": [
-    "static/css/main.11e152c2.css",
-    "static/js/main.cd0c1a69.js"
+    "static/css/main.c17895c7.css",
+    "static/js/main.6ff35eac.js"
   ]
 }
