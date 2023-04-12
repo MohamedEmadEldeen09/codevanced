@@ -12,21 +12,34 @@
 }
 @media only screen and (max-width : 850px) {
     .sign-up-class{
-        width: 70%;
+        width: 80%;
     }
 }
 @media only screen and (min-width : 850px) {
     .sign-up-class{
-        width: 40%;
+        width: 50%;
     }
 }
+
 
 #sign-up{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
+    margin: 70px 0 100px 0;
 }
+
+.sign-up-class{
+   padding: 10px;
+   box-shadow: var(--signUpBlockBoxShadow);
+   transition: all 0.4s;
+}
+
+.sign-up-class:hover{
+  transform: translateY(-5px);
+}
+
 .information{
     display: flex;
     flex-direction: column;
@@ -46,7 +59,7 @@
     background-color: aliceblue;  
 }
 .sign-up-footer{
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .sign-up-footer p a{
     color: rgb(36, 159, 207);
@@ -58,4 +71,18 @@
 }
 .sign-up-footer p a:hover{
     text-decoration: underline;
+}
+
+.warning-icon{
+    color: rgba(220, 220, 37, 0.904);
+}
+
+.sign-up-alert-notes{
+    margin: 20px 0;
+}
+
+/* profile */
+.btn-del-acount{
+    background-color: rgb(167, 17, 17);
+    margin-left: 50px;
 }

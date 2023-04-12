@@ -56,10 +56,14 @@ font-family: 'Josefin Sans', sans-serif;
 :root{
     --black : black;
     --white : white;  
-    --primary : rgb(100, 212, 100);
+    --primary : rgb(124, 62, 181);
+    --dark: #eee;
+    --signUpBlockBoxShadow: 2px 2px 10px #00000038;
 }
 body{
-    background-color: var(--white);
+
+    background-color: var(--dark);
+
 }
 a{
     text-decoration: none;
@@ -79,20 +83,42 @@ li{
 .container{   
     margin: 0 auto;
 }
+@media only screen and (min-width : 850px){
+    #main-menu{
+        display: none;
+      }
+    .set-Menu{
+        display: block;
+    }
+    .nav{
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width : 850px){
+    #main-menu{
+        display: block;
+      }
+    .set-Menu{
+          display: none;
+      }
+    .nav{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 13px;
+    width: 100%;
+    text-align: center;  
+    }
+   .dropdown{
+        left: 60%;
+        top: -5px;
+    }
+}
 @media only screen and (min-width : 600px) {
      .container{
         width: 80%;
      }
-     #main-menu{
-        display: none;
-      }
-      .set-Menu{
-        display: block;
-    }
-     .nav{
-        display: flex;
-        flex-direction: row;
-    }
     .home-content p{
         width: 70%;
     }
@@ -108,26 +134,8 @@ li{
     .container{
        width:100%;
     }   
-    #main-menu{
-      display: block;
-    }
-    .set-Menu{
-        display: none;
-    }
     .logo{
         width: 100%;
-    }
-    .nav{
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-        gap: 13px;
-        width: 100%;
-        text-align: center;       
-    }
-    .dropdown{
-        left: 60%;
-        top: -5px;
     }
     .message{
         margin-top: 10px;
@@ -181,10 +189,12 @@ li{
    z-index: -2;
 }
 
-
 .header{
     padding: 15px 5px;
     background-color: transparent;
+}
+.forLogo-char{
+    color: var(--primary);
 }
 .head{
     display: flex;
@@ -195,7 +205,8 @@ li{
 }
 .tail{   
     text-align: right;
-    padding: 5px 0;
+    padding: 8px 0;
+    
 }
 .nav{
     padding-top: 5px;
@@ -246,7 +257,9 @@ li{
     text-align: center; 
     margin-top: 5px; 
     transition: all 0.3s;
+    min-width: 100px;
 }
+
 .dropdown-a{
     color: white;
     font-weight: bold;
@@ -257,7 +270,7 @@ li{
 }
 
 .dropdown :nth-of-type(even){
-    background-color: rgba(16, 107, 16, 0.779);
+    background-color: rgba(111, 37, 171, 0.779);
 }
 
 .menu:hover .dropdown{
@@ -272,9 +285,11 @@ li{
     cursor: pointer;
     transition: all 0.2s;
     color: var(--black);
+    text-align: center;
 }
-.icon:hover{
-    color: rgb(158, 222, 158);
+.icon:hover,.user-icon:hover{
+    /* color: rgb(158, 222, 158); */
+    color : var(--primary)
 }
 #main-menu{
     position: absolute;
@@ -286,31 +301,30 @@ li{
     top: 15px;
     right: 50px;
 }
+.user-icon{
+    width: 40px;
+    height: 40px;
+    color: var(--black);
+    vertical-align: middle;
+    transition: all 0.2s;
+}
 
 /*------------------------------------------*/
 /* main */
 .section{
     padding: 30px 5px;
     width: 100%; 
-    margin: 50px 0; 
+    margin: 50px 0;    
 }
 
 /*-------------------------*/
 /* home*/
 #home{
     margin-top: 20px;
-    /* background-image:linear-gradient(to right , rgba(157, 149, 149, 0.5) , rgba(0,0,0,0.7)),url('../images/homeLogo2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom; */
-   
-    
     padding: 50px 0; 
     color: var(--black);
-    /* box-shadow: 0 10px 15px rgba(191, 208, 189, 0.401);   */
-    box-shadow: 0 10px 15px rgba(100, 212, 100, 0.401);  
+    box-shadow: 0 10px 15px var(--primary);  
     min-height: calc(100vh - 150px);
-   
    border-top-right-radius: 50px;
    border-bottom-left-radius: 50px;
 }
@@ -664,7 +678,6 @@ li{
 /*-------------------------*/
 /*contact*/
 .contact{
-    /* background-color: rgb(228, 210, 210); */
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(230px, 1fr));
     justify-content: space-between;
@@ -709,7 +722,7 @@ textarea{
     font-weight: bold;
     padding: 10px;
     background-color: aliceblue;  
-    color: var(--black); 
+ 
 }
 .btn-icon{
     font-weight: bold;
@@ -737,6 +750,32 @@ textarea{
 .btn-icon:hover{
    transform: translateY(-3px);
 }
+/*------------------------------------------*/
+/*download app*/
+
+.appDownload{
+    background-color: rgba(87, 25, 145, 0.564);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.for-appImage img{
+    max-width: 100px;
+    height: auto;
+}
+.for-appImage{
+    margin-top: 20px;
+}
+
+.appD-content p{
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
 /*------------------------------------------*/
 /*authors*/
 #authors{

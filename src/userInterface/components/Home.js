@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState , useRef } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import {useDispatch ,  useSelector } from 'react-redux'
+import { setUserData } from '../../commen/user_slice'
+
 
 //images
 import webT from '../images/webT.jpg'
-import mobT from '../images/mobT.png'
-import desT from '../images/desT.png'
-import desT2 from '../images/desT2.png'
 import review1 from '../images/review1.jpg'
 import review7 from '../images/review7.jpg'
 import review4 from '../images/review4.jpg'
-import review6 from '../images/review6.jpg'
 import review2 from '../images/review2.jpg'
+import appImage from '../images/appDownload.png'
+import track1 from '../images/track1.png'
 
 
 
@@ -18,19 +19,38 @@ import review2 from '../images/review2.jpg'
 function Home() {
 
 const [darkTheme , setTheme] = useState(false)
+const [hasLogedIn , sethasLogedIn] = useState(false)
+const userData = useSelector(state=>state.user.userData)
+const emailOfMessage = useRef("")
+const message = useRef("")
+const [sendMessage ,  setMessage] = useState(null)
+const dispatch = useDispatch()
+const route = useNavigate()
+
 
 useEffect(()=>{
+ if(localStorage.getItem("codevanced_inf") != null){
+   let userInf =JSON.parse(localStorage.getItem("codevanced_inf")) 
+   if(userInf.login){
+    sethasLogedIn(true)
+   }
+   if(!userInf.login){
+    sethasLogedIn(false)
+   }
+  
+  dispatch(setUserData(JSON.parse(window.localStorage.getItem("codevanced_inf"))))
+ } 
 
 // handle displaying the main menu
 let m = document.getElementById('main-nav')
 window.onresize = ()=>{
-    if(window.innerWidth >= 600){
+    if(window.innerWidth >= 830){
       if(!m.classList.contains('nav')){
         m.classList.remove('set-Menu')
         m.classList.add('nav')
       }
     }
-    else if(window.innerWidth < 600){
+    else if(window.innerWidth < 830){
         if(m.classList.contains('nav')){
             m.classList.remove('nav')
             m.classList.add('set-Menu')
@@ -56,23 +76,22 @@ let btnUp = document.getElementById('up')
     counter.textContent = x
     x += 1
   },30)
-})
+} , [])
 
 //dark Theme
 const changeTheme = ()=>{
-  let dark = document.getElementById('dark')
   let r = document.querySelector(':root')
-  let rs = getComputedStyle(r)
-  // let darkmood = false
   if(!darkTheme){    
   r.style.setProperty('--black' , 'white')
   r.style.setProperty('--white' , 'black') 
-    // darkmood= true
+  r.style.setProperty('--dark' , 'rgb(18, 17, 17)') 
+  r.style.setProperty('--signUpBlockBoxShadow' , '2px 2px 10px rgba(255, 255, 255, 0.576)') 
     setTheme(true)
   }else{  
   r.style.setProperty('--black' , 'black')
   r.style.setProperty('--white' , 'white')
-  // darkmood= false 
+  r.style.setProperty('--dark' , '#eee')
+  r.style.setProperty('--signUpBlockBoxShadow' , '2px 2px 10px #00000038') 
    setTheme(false)
   }   
  
@@ -87,6 +106,7 @@ const handleUp = ()=>{
   })
 }
 
+// handle displaying the main menu
 const handleMenu = ()=>{
 let m = document.getElementById('main-nav')
  if(m.classList.contains('nav')){
@@ -98,6 +118,45 @@ let m = document.getElementById('main-nav')
  }
 
 }
+
+//to log out
+const handleLogOut = ()=>{
+  let userInf = {
+    ...JSON.parse(localStorage.getItem("codevanced_inf")) 
+  }
+  localStorage.removeItem("codevanced_inf")
+  let codevanced_inf = {
+    firstName : userInf.firstName,
+    lastName : userInf.lastName,
+    email : userInf.email,
+    password : userInf.password,
+    login : false,
+  }
+  localStorage.setItem("codevanced_inf" ,JSON.stringify(codevanced_inf) )
+  sethasLogedIn(false)   
+}
+
+//start test
+const startTest = ()=>{
+   if(hasLogedIn){
+      route("/codevanced/user_view/test")
+   }else{
+      route("/codevanced/user_view/log_in")
+   }
+}
+
+//to send a message 
+const handleSend = ()=>{
+  if(hasLogedIn){
+    emailOfMessage.current.value = ""
+    message.current.value = ""
+    setMessage(true)
+  }
+  if(!hasLogedIn){
+    setMessage(false)
+  }
+}
+
   return (
     <>
     <button id="main-menu" className="icon" onClick={handleMenu}><i className='bx bx-menu-alt-right'></i></button>
@@ -112,7 +171,10 @@ let m = document.getElementById('main-nav')
     <header className="header">
       <div className="head">
         <div className="logo">
-          <Link to="/codevanced/user_view"><h2>Codvanced</h2></Link>         
+          <Link to="/codevanced/user_view"><h2>
+            <span className='forLogo-char'>&lt;</span> Codvanced 
+            <span className='forLogo-char'>/&gt;</span>
+            </h2></Link>         
        </div>
        <nav className="nav" id="main-nav"> 
           <a href="#home">Home</a>
@@ -121,19 +183,34 @@ let m = document.getElementById('main-nav')
           <div className="menu">
             <a href="#departments" id="drop">Careers</a>
             <ul className="dropdown">
-              <li><a href="#web" className="dropdown-a">Web</a></li>
-              <li><a href="#mobile" className="dropdown-a">Mobile</a></li>
-              <li><a href="#desktop" className="dropdown-a">Desktop</a></li>
+              <li><a href="#web" className="dropdown-a">Track 1</a></li>
+              <li><a href="#mobile" className="dropdown-a">Track 2</a></li>
+              <li><a href="#desktop" className="dropdown-a">Track 3</a></li>
             </ul>
           </div>               
           <a href="#about">About</a>
           <a href="#contact">Contaact</a>                
        </nav>     
       </div>
-       <div className="tail">
-        <Link to='/codevanced/user_view/log_in' className="btn" id="join">Log in</Link>     
-        <Link to='/codevanced/user_view/join' className="btn" id="join">Join</Link>
-       </div>
+      
+        {
+          !hasLogedIn ?
+          <div className="tail">
+          <Link to='/codevanced/user_view/log_in' className="btn" >Log in</Link>     
+          <Link to='/codevanced/user_view/join' className="btn" >Join</Link>
+          </div> :
+          <div className="tail">
+          <Link to='/codevanced/user_view/user_profile' >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="user-icon">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+
+             </Link>                                     
+          <Link onClick={handleLogOut}  className="btn" >Log out</Link>
+          </div>
+        }
+        
+       
     </header>
     
     <main className="main">
@@ -144,7 +221,8 @@ let m = document.getElementById('main-nav')
            <span className="alarm"></span>
            <h1>Career Develoment</h1>
            <p>Our role helping you finding the suitable programing track</p>                  
-           <button className="btn btn-home">Get statrted for free</button>
+           <button onClick={startTest} className="btn btn-home">
+            Get statrted for free</button>
          </div> 
        </div>   
       </section>
@@ -154,7 +232,7 @@ let m = document.getElementById('main-nav')
          
         <div className="track" id="web">        
           <div className="track-content">
-            <h3>Web Development</h3>
+            <h3>Track 1</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, 
               cupiditate? Aliquid dolores nihil illo animi quas aperiam consequatur 
@@ -170,9 +248,9 @@ let m = document.getElementById('main-nav')
         </div>
 
         <div className="track" id="mobile">
-          <img src={mobT} alt="" className="mobile-img" />
+          <img src={webT} alt="" className="mobile-img" />
           <div className="track-content">
-            <h3>Mobile Development</h3>
+            <h3>Track 2</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, 
               cupiditate? Aliquid dolores nihil illo animi quas aperiam consequatur 
@@ -188,7 +266,7 @@ let m = document.getElementById('main-nav')
 
         <div className="track" id="desktop">
           <div className="track-content">
-            <h3>Desktop Development</h3>
+            <h3>Track 3</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, 
               cupiditate? Aliquid dolores nihil illo animi quas aperiam consequatur 
@@ -200,7 +278,7 @@ let m = document.getElementById('main-nav')
             </p>             
             <button className="second-type-ofBtn">Guide</button>
           </div>
-          <img src={desT2} alt="" className="desktop-img" />
+          <img src={track1} alt="" className="desktop-img" />
         </div>
 
       </section>
@@ -214,7 +292,7 @@ let m = document.getElementById('main-nav')
 
           <div className="about-us">
             <h3 className="about-us-logo"><span className="code"> &lt;</span> codvanced 
-              <span className="code">/ &gt;</span></h3>
+              <span className="code"> / &gt;</span></h3>
             <p className="about-us-description">
               <i className='bx bxs-quote-single-left' ></i>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo, provident? Fuga 
@@ -227,7 +305,7 @@ let m = document.getElementById('main-nav')
               <span className="fot">--footer</span>                         
             </p>
             <p>
-             <span className="read-more"><span className="arrow">-&gt;</span>
+             <span className="read-more"><span className="arrow">-&gt;  </span>
              read more about our role and our approach</span> 
               <button type="button" className="btn">Documentation</button>
             </p>         
@@ -293,14 +371,15 @@ let m = document.getElementById('main-nav')
           in order to clear your confusion about 
           the differnt tracks in the programing field
         </p>
-        <Link to="/codevanced/user_view/test" className="btn">Start</Link>
+        <button onClick={startTest} to="/codevanced/user_view/test" 
+        className="btn">Start</button>
       </section>
 
       <section className="section contact" id="contact" role="region">
         <div className="contact-content">
           <h3>Ask us</h3>
           <p>Our role helping you finding the suitable programing 
-            track email us for </p>
+            track email us for help</p>
           <div className="social">
             <button className="btn-icon"><i className='bx bxl-twitter'></i></button> 
             <button className="btn-icon"><i className='bx bxl-facebook'></i></button>
@@ -310,12 +389,40 @@ let m = document.getElementById('main-nav')
         </div>
         <div className="message">
           <label htmlFor="email">Email :</label>                      
-          <input type="text" placeholder=" enter your email" id="email" />
+          <input type="text" ref={emailOfMessage}  placeholder=" enter your email" 
+          id="email" />
           <label htmlFor="textarea">Message :</label>
-          <textarea name="" id="textarea" cols="50" rows="10"></textarea>
-          <button type="button" className="btn">Send</button>
+          <textarea name="" ref={message} id="textarea"  cols="50" rows="10"></textarea>
+          {
+            sendMessage === false &&
+            <div className='sign-up-footer'> 
+            <p>you have to <Link to="/codevanced/user_view/log_in">         
+              Log in </Link> to email us</p>
+            </div>
+            
+          }                
+          {
+            sendMessage &&<div className='sign-up-footer'><p>
+              The message has sended and we will 
+              also email you with response ,                        
+              </p>
+              <p>
+                --Thank you for comunicating with us
+              </p></div>
+          }
+          <button onClick={handleSend} type="button" className="btn">Send</button>
         </div>
       </section> 
+      
+      <section className='section appDownload'>        
+          <div className='appD-content'>
+          <p><i className='bx bxs-hand-right'></i> - use our application</p>
+             <button className='btn'>Download</button>
+          </div>
+          <div className='for-appImage'>
+             <img src={appImage} alt="app downloader photo"/>
+          </div>
+      </section>
 
       <section id="authors" className="section">
         <h2>Codvanced Authors</h2>
