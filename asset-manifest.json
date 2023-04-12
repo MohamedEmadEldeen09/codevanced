@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/codevanced/static/css/main.c17895c7.css",
-    "main.js": "/codevanced/static/js/main.a69e1c5d.js",
+    "main.css": "/codevanced/static/css/main.a543bb3e.css",
+    "main.js": "/codevanced/static/js/main.3a327cdb.js",
     "static/media/track1.png": "/codevanced/static/media/track1.e473f920580cd89f2f00.png",
     "static/media/review4.jpg": "/codevanced/static/media/review4.606389146e9e9930519b.jpg",
     "static/media/review7.jpg": "/codevanced/static/media/review7.f43ddf3129ddc9305bbd.jpg",
@@ -10,11 +10,11 @@
     "static/media/webT.jpg": "/codevanced/static/media/webT.a96684e459e978ad5a76.jpg",
     "static/media/appDownload.png": "/codevanced/static/media/appDownload.afff80703d0f0a975d1b.png",
     "index.html": "/codevanced/index.html",
-    "main.c17895c7.css.map": "/codevanced/static/css/main.c17895c7.css.map",
-    "main.a69e1c5d.js.map": "/codevanced/static/js/main.a69e1c5d.js.map"
+    "main.a543bb3e.css.map": "/codevanced/static/css/main.a543bb3e.css.map",
+    "main.3a327cdb.js.map": "/codevanced/static/js/main.3a327cdb.js.map"
   },
   "entrypoints": [
-    "static/css/main.c17895c7.css",
-    "static/js/main.a69e1c5d.js"
+    "static/css/main.a543bb3e.css",
+    "static/js/main.3a327cdb.js"
   ]
 }
