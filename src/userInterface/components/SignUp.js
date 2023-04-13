@@ -36,10 +36,8 @@ function SignUp() {
           <hr /> 
         <section id="sign-up" className="">
           <footer className="sign-up-footer">
-            <h3>
-                you have already signed up 
-              </h3>
               <p>
+                you have already signed up
                 go to the <Link to="/codevanced/user_view/log_in">log in page</Link>
               </p>
           </footer>      
@@ -101,8 +99,9 @@ function SignUp() {
                 <i className='bx bxs-message-square-error'></i></span>
                   <p>
                     if you already have an acount and signed up before on 
-                    a defferent browser
-                    please sign up again on this browser using the same
+                    a defferent browser or you have signed throug your mobile
+                    and now you open the website on your computer or the opposite, 
+                    So please sign up again on this browser using the same
                     data or different does not matter .
                   </p>
                </div>                              
@@ -126,7 +125,7 @@ function SignUp() {
                 </form>               
                 <footer className="sign-up-footer">
                     <p>if you already have an account 
-                    <Link to="/codevanced/user_view/log_in">log in</Link></p>
+                    <Link to="/codevanced/user_view/log_in"> log in</Link></p>
                 </footer>   
             </div>                 
         </section>

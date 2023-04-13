@@ -37,19 +37,17 @@ function LogIn() {
               </div>
             </div>
           </header>
+          <hr/>
          <section id="sign-up" className="">
-            <div className="sign-up-className">
-                <div className="information">
-                  <p><span style={{fontWeight:'bold' , fontSize:'1.7rem'}}>Note : 
-                  </span> you do not have an acount to log in </p>
-                </div>            
-                <footer className="sign-up-footer">
-                    <p> 
-                      got to the 
-                      <Link to="/codevanced/user_view/join"> Sign-up </Link>
-                      page to register
-                    </p>
-                </footer>   
+            <div className="sign-up-className">          
+              <footer className="sign-up-footer">
+                <p>Note : you do not have an acount to log in </p>                                     
+                <p>                  
+                  got to the 
+                  <Link to="/codevanced/user_view/join"> Sign-up </Link>
+                  page to register
+                </p>
+              </footer>   
             </div>              
         </section>
       </div> 

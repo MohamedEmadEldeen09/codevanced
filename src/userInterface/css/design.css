@@ -254,10 +254,9 @@ li{
     box-shadow: 0 3px 5px 0 rgba(189, 223, 189,0.4);
     border-radius: 5px;
     position: absolute;
-    text-align: center; 
     margin-top: 5px; 
     transition: all 0.3s;
-    min-width: 100px;
+    min-width: 120px;
 }
 
 .dropdown-a{
@@ -266,7 +265,8 @@ li{
 }
 
 .dropdown li{
-    padding: 10px;
+    padding: 10px 5px;
+    text-align: left;
 }
 
 .dropdown :nth-of-type(even){

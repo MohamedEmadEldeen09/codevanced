@@ -5,13 +5,17 @@ import { setUserData } from '../../commen/user_slice'
 
 
 //images
-import webT from '../images/webT.jpg'
 import review1 from '../images/review1.jpg'
 import review7 from '../images/review7.jpg'
 import review4 from '../images/review4.jpg'
 import review2 from '../images/review2.jpg'
+import review5 from '../images/review5.jpg'
 import appImage from '../images/appDownload.png'
-import track1 from '../images/track1.png'
+import mobT2 from '../images/mobT2.png'
+import frontT1 from '../images/frontT1.png'
+import backT2 from '../images/backT2.png'
+import dataS from '../images/dataS.png'
+import webT from '../images/webT.png'
 
 
 
@@ -183,9 +187,10 @@ const handleSend = ()=>{
           <div className="menu">
             <a href="#departments" id="drop">Careers</a>
             <ul className="dropdown">
-              <li><a href="#web" className="dropdown-a">Track 1</a></li>
-              <li><a href="#mobile" className="dropdown-a">Track 2</a></li>
-              <li><a href="#desktop" className="dropdown-a">Track 3</a></li>
+              <li><a href="#FrontEnd" className="dropdown-a">FrontEnd</a></li>
+              <li><a href="#BackEnd" className="dropdown-a">BackEnd</a></li>
+              <li><a href="#Android" className="dropdown-a">Android</a></li>
+              <li><a href="#DataSience" className="dropdown-a">Data Sience</a></li>
             </ul>
           </div>               
           <a href="#about">About</a>
@@ -230,32 +235,38 @@ const handleSend = ()=>{
       
       <section className="section" id="departments" role="region">
          
-        <div className="track" id="web">        
+        <div className="track" id="FrontEnd">        
           <div className="track-content">
-            <h3>Track 1</h3>
+            <h3>FrontEnd Development</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, 
-              cupiditate? Aliquid dolores nihil illo animi quas aperiam consequatur 
-              quam repellat eius ab 
-              distinctio illum explicabo, ipsum consectetur, nostrum enim officia?
+              For stepping into Front-End Development, the most 
+              essential skills you should have been HTML, CSS, and 
+              JavaScript. These skills are the bare minimum to start 
+              with Front-End  Development. Note that front-end web 
+              development is not just limited to these three  skills, 
+              there are many more technologies that you will need to 
+              learn to excel as a Front End Developer in 2023..... 
             </p>
             <p className="read-more-guide">
               -- read more information
             </p>             
             <button className="second-type-ofBtn">Guide</button>
           </div>
-          <img src={webT} alt="" className="web-img" />
+          <img src={frontT1} alt="" className="web-img" />
         </div>
 
-        <div className="track" id="mobile">
-          <img src={webT} alt="" className="mobile-img" />
+        <div className="track" id="BackEnd">
+          <img src={backT2} alt="" className="mobile-img" />
           <div className="track-content">
-            <h3>Track 2</h3>
+            <h3>BackEnd Development</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, 
-              cupiditate? Aliquid dolores nihil illo animi quas aperiam consequatur 
-              quam repellat eius ab 
-              distinctio illum explicabo, ipsum consectetur, nostrum enim officia?
+              Programming language is the language through which the 
+              developer can command the  computer. A back-end developer 
+              needs to have knowledge of the programming  languages. There 
+              are plenty of programming languages like C, C++, Java, etc. 
+              Choose  one and start learning it. Understand every single 
+              step and technique. Focus on one  language at a time, develop 
+              the skill, and practice......             
             </p>
             <p>
               -- read more information
@@ -264,21 +275,48 @@ const handleSend = ()=>{
           </div>        
         </div>
 
-        <div className="track" id="desktop">
+        <div className="track" id="Android">
           <div className="track-content">
-            <h3>Track 3</h3>
+            <h3>Android Development</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, 
-              cupiditate? Aliquid dolores nihil illo animi quas aperiam consequatur 
-              quam repellat eius ab 
-              distinctio illum explicabo, ipsum consectetur, nostrum enim officia?
+              Software engineering requires you to learn a programming language, 
+              and in Android’s  case, there are two major programming 
+              languages used- Java and Kotlin. Learning  Kotlin is a 
+              good place to start because the language has been developed 
+              by Google as a  replacement for Java. It offers a host of 
+              features that ease the coding process. With  Kotlin, you can 
+              code with minimal chances of coding errors and crashes. 
+              One of the  reasons why programmers well-versed in Java 
+              also learn Kotlin is that, besides offering  extensive 
+              features, it is Java language compatible. With Kotlin, 
+              you can use Kotlin codes  on Java and the other way around....... 
             </p>
             <p>
               -- read more information
             </p>             
             <button className="second-type-ofBtn">Guide</button>
           </div>
-          <img src={track1} alt="" className="desktop-img" />
+          <img src={mobT2} alt="" className="desktop-img" />
+        </div>
+        
+        <div className="track" id="DataSience">
+          <img src={dataS} alt="" className="mobile-img" />
+          <div className="track-content">
+            <h3>Data Science</h3>
+            <p>
+              Data science is a huge field, with a lot of overlapping domains, 
+              and the idea of having a lot of topics to  learn with a lot of 
+              sources for each topic is a real headache. 
+              You might have been wondering, what should I start with, 
+              Should I start with learning machine learning?  
+              What about deep learning? Everyone is talking about 
+              deep learning; it must be the first thing to start  with.....                
+            </p>
+            <p>
+              -- read more information
+            </p>             
+            <button className="second-type-ofBtn">Guide</button>
+          </div>        
         </div>
 
       </section>
@@ -330,7 +368,7 @@ const handleSend = ()=>{
             </p>
           </div>
           <div className="card-review">
-            <img src={review4} alt="review" />
+            <img src={review5} alt="review" />
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum iste, 
               debitis sed aut commodi eius consequuntur laudantium? Ratione nam 
               libero ipsam nostrum, 
