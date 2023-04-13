@@ -491,7 +491,7 @@ const handleSend = ()=>{
           </div>
 
           <div className="card-author" id="4">
-            <img src={review7} alt="" />
+            <img src={review5} alt="" />
             <div className="authors-content">
               <h4>Osama Raafat</h4>
               <p>Develper in google</p>
@@ -499,7 +499,7 @@ const handleSend = ()=>{
           </div>
 
           <div className="card-author" id="5">
-            <img src={review7} alt="" />
+            <img src={review4} alt="" />
             <div className="authors-content">
               <h4>Khaled Alaa</h4>
               <p>Develper in google</p>
@@ -507,7 +507,7 @@ const handleSend = ()=>{
           </div>
 
           <div className="card-author" id="6">
-            <img src={review7} alt="" />
+            <img src={review1} alt="" />
             <div className="authors-content">
               <h4>Ali Hassan</h4>
               <p>Develper in google</p>
@@ -523,7 +523,7 @@ const handleSend = ()=>{
           </div>
 
           <div className="card-author" id="8">
-            <img src={review7} alt="" />
+            <img src={review2} alt="" />
             <div className="authors-content">
               <h4>Cyrilis Sami</h4>
               <p>Develper in google</p>
@@ -531,7 +531,7 @@ const handleSend = ()=>{
           </div>
 
            <div className="card-author" id="9">
-            <img src={review7} alt="" />
+            <img src={review5} alt="" />
             <div className="authors-content">
               <h4>Youssef Hamed</h4>
               <p>Develper in google</p>
@@ -539,7 +539,7 @@ const handleSend = ()=>{
           </div>
 
           <div className="card-author" id="10">
-            <img src={review7} alt="" />
+            <img src={review4} alt="" />
             <div className="authors-content">
               <h4>Youssef Yasser</h4>
               <p>Develper in google</p>
@@ -547,7 +547,7 @@ const handleSend = ()=>{
           </div>
 
           <div className="card-author" id="11">
-            <img src={review7} alt="" />
+            <img src={review1} alt="" />
             <div className="authors-content">
               <h4>Mohamed Emad</h4>
               <p>Develper in google</p>
